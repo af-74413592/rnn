@@ -128,11 +128,6 @@ if __name__ == '__main__':
                 d_V += delta_V
                 d_U += delta_U
 
-            #--------------------- 梯度截断 --------------------------
-            # d_U = np.clip(d_U,-max_g,max_g)
-            # d_W = np.clip(d_W,-max_g,max_g)
-            # d_V = np.clip(d_V,-max_g,max_g)
-
             # ----------- bias 的梯度,等于对应矩阵的行上求和 ------------
             delta_W_bias = np.sum(d_W, axis=0,keepdims = True)
             delta_U_bias = np.sum(d_U, axis=0,keepdims = True)
